@@ -39,7 +39,7 @@ const Item = (props) => {
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: 'blue',
+    backgroundColor: '#ADD8E6',
     padding: 15,
     borderRadius: 10,
     flexDirection: 'row',
