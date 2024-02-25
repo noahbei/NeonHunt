@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { ButtonGroup } from '@rneui/themed';
 
 export default function App() {
-    const [selectedIndex, setSelectedIndex] = useState([0, 2]);
+    const [selectedIndex, setSelectedIndex] = useState([0, 1]);
     const [text, setText] = useState('');
 
     const handleInputChange = (input) => {
@@ -22,15 +22,13 @@ export default function App() {
       <StatusBar style="auto" />
       {/* <NeonButton onPressFunction={() => {console.log("button test")}} text={'Hello'}></NeonButton> */}
       
-      <Text style={styles.label}>Enter some text:</Text>
+      <Text style={styles.label}>Enter Game Key:</Text>
       <TextInput
         style={styles.input}
         onChangeText={handleInputChange}
         value={text}
-        placeholder="Enter game key"
+        placeholder="###"
       />
-      <Button title="Submit" onPress={handleButtonPress} />
-
 
       <ButtonGroup
         buttons={['INDOORS', 'OUTDOORS']}
@@ -41,10 +39,11 @@ export default function App() {
         containerStyle={{ marginBottom: 20 }}
       />
 
-      <Link href="/readyScreen" asChild>
+      <Link href="/lobbyScreen" asChild>
         <Button
             title="Start Game!"
             color="#f194ff"
+            onPress={handleButtonPress}
         />
       </Link>
       
