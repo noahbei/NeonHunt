@@ -8,8 +8,8 @@ const Item = (props) => {
   const takePhoto = async () => {
     let result = await ImagePicker.launchCameraAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      allowsEditing: true,
-      aspect: [4, 3],
+      allowsEditing: false,
+      aspect: [1, 1],
       quality: 1,
     });
     console.log(result);
@@ -21,28 +21,31 @@ const Item = (props) => {
   return (
     <View style={styles.item}>
       <View style={styles.itemLeft}>
-        <View style={styles.square}></View>
+        <View style={styles.square}>
+          <Text>{props.num}</Text></View>
         <Text style={styles.itemText}>{props.text}</Text>
       </View>
-      <View style={styles.circular}></View><Button
+      
+      {!image && <Button
           title="take picture"
           color="#f194ff"
           onPress={takePhoto}
-      />
-      {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+      />}
+      {image && <Image source={{ uri: image }} style={{ width: 150, height: 150 }} />}
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: '#FFF',
+    backgroundColor: 'blue',
     padding: 15,
     borderRadius: 10,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom: 20,
+    width: '90%'
   },
   itemLeft: {
     flexDirection: 'row',

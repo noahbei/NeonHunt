@@ -6,19 +6,13 @@ import * as ImagePicker from 'expo-image-picker';
 import { useState } from 'react';
 
 export default function App() {
-  
-
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Item text={'Task1'}></Item>
-      <Item text={'Task2'}></Item>
-      <Item text={'Task3'}></Item>
-      <Button
-          title="take picture"
-          color="#f194ff"
-          
-      />
+      <Item num={1} text={'A team'}></Item>
+      <Item num={2} text={'Task2'}></Item>
+      <Item num={3} text={'Task3'}></Item>
+    
       <Link href="/finishScreen" asChild>
         <Button
             title="done -- go to end page"
