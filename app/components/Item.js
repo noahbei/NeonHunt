@@ -21,8 +21,9 @@ const Item = (props) => {
   return (
     <View style={styles.item}>
       <View style={styles.itemLeft}>
-        <View style={styles.square}>
-          <Text>{props.num}</Text></View>
+        <View style={styles.circular}>
+          <Text style={styles.text}>{props.num}</Text>
+        </View>
         <Text style={styles.itemText}>{props.text}</Text>
       </View>
       
@@ -48,27 +49,29 @@ const styles = StyleSheet.create({
     width: '90%'
   },
   itemLeft: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'center',
-    flexWrap: 'wrap'
+    justifyContent: 'center',
+    maxWidth: '50%',
   },
-  square: {
-    width: 24,
-    height: 24,
+  circular: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 50,
+    height: 50,
     backgroundColor: '#55BCF6',
     opacity: 0.4,
-    borderRadius: 5,
-    marginRight: 15,
+    borderRadius: 10,
+    marginRight: 0,
   },
   itemText: {
     maxWidth: '80%',
+    textAlign: 'center'
   },
-  circular: {
-    width: 12,
-    height: 12,
-    borderColor: '#55BCF6',
-    borderWidth: 2,
-    borderRadius: 5,
+  text: {
+    fontSize: 30,
+    fontWeight: 'bold',
   },
 });
 

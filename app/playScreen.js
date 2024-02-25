@@ -9,8 +9,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Item num={1} text={'A team'}></Item>
-      <Item num={2} text={'Task2'}></Item>
+      <Item num={1} text={'A team member wearing a hat with a unique shape'}></Item>
+      <Item num={2} text={'Task2 A tea'}></Item>
       <Item num={3} text={'Task3'}></Item>
     
       <Link href="/finishScreen" asChild>
