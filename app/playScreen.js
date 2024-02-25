@@ -1,17 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, Pressable} from 'react-native';
 import { Link } from 'expo-router';
-import NeonButton from './components/NeonButton';
+import Item from './components/Item'
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <NeonButton onPressFunction={() => {console.log("button test")}} text={'Hello'}></NeonButton>
-      <Link href="/readyScreen" asChild>
+      <Item text={'Task1'}></Item>
+      <Item text={'Task2'}></Item>
+      <Item text={'Task3'}></Item>
+      <Button
+          title="take picture"
+          color="#f194ff"
+          onPress={() => {}}
+      />
+      <Link href="/finishScreen" asChild>
         <Button
-            title="Start Game!"
+            title="done -- go to end page"
             color="#f194ff"
+            onPress={() => {}}
         />
       </Link>
     </View>
