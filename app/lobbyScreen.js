@@ -2,13 +2,24 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, Pressable, ScrollView} from 'react-native';
 import { Link } from 'expo-router';
 import Room from './components/Room';
+import Title from './components/Title';
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <Title></Title>
       <StatusBar style="auto" />
       <ScrollView contentContainerStyle={styles.contentContainer}>
         <Room id={'2345'} currentPlayers={3}></Room>
+        <Room></Room>
+        <Room></Room>
+        <Room></Room>
+        <Room></Room>
+        <Room></Room>
+        <Room></Room>
+        <Room></Room>
+        <Room></Room>
+        <Room></Room>
         <Room></Room>
         <Room></Room>
         <Room></Room>
@@ -39,6 +50,6 @@ const styles = StyleSheet.create({
     gap: 20,
     padding: 10,
     backgroundColor: '#fff',
-    marginBottom: 65
+    marginBottom: 145
   },
 });
