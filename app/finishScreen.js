@@ -2,15 +2,38 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, Pressable} from 'react-native';
 import { Link } from 'expo-router';
 import Item from './components/Item'
+import Title from './components/Title';
 
 export default function App() {
   return (
-      <Link href="/" asChild>
-        <Button
-            title="Retry"
-            color="#f194ff"
-            onPress={() => {}}
-        />
-      </Link>
+    <View style={styles.container}>
+      <Title></Title>
+      <View style={styles.innerContainer}>
+        <Link href="/" asChild>
+          <Button
+              title="Retry"
+              color="#f194ff"
+              onPress={() => {}}
+          />
+        </Link>
+      </View>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+    display: 'flex',
+    alignItems: 'center',
+    height: '100%'
+  },
+  innerContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100%',
+    width: '90%',
+    position: 'absolute'
+  }
+});

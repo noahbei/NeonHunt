@@ -4,10 +4,12 @@ import { Link } from 'expo-router';
 import Item from './components/Item'
 import * as ImagePicker from 'expo-image-picker';
 import { useState } from 'react';
+import Title from './components/Title';
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <Title></Title>
       <StatusBar style="auto" />
       <Item num={1} text={'A team member wearing a hat with a unique shape'}></Item>
       <Item num={2} text={'Task2 A tea'}></Item>
@@ -15,7 +17,7 @@ export default function App() {
     
       <Link href="/finishScreen" asChild>
         <Button
-            title="done -- go to end page"
+            title="Done"
             color="#f194ff"
         />
       </Link>
@@ -25,7 +27,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
