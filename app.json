@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "your-app-scheme",
     "name": "NeonHunt",
     "slug": "NeonHunt",
     "version": "1.0.0",
