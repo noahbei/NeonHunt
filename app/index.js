@@ -44,6 +44,7 @@ export default function App() {
 
         <Link href="/lobbyScreen" asChild>
           <Button
+              style={styles.startBtn}
               title="Start Game!"
               color="#f194ff"
               onPress={handleButtonPress}
@@ -68,5 +69,13 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '90%',
     position: 'absolute'
+  },
+  label: {
+    color: '#1fde4c',
+    fontSize: 18,
+    marginBottom: 20
+  },
+  input: {
+    marginBottom: 20
   }
 });

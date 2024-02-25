@@ -8,13 +8,14 @@ export default function App() {
     <View style={styles.container}>
       <Title></Title>
       <View style={styles.innerContainer}>
-        <Link href="/playScreen" asChild>
-          <Button
-              title="ready"
-              color="#f194ff"
-              onPress={() => {}}
-          />
-        </Link>
+      <Link href="/playScreen" asChild>
+        <Button
+          title="Ready"
+          color="#4CAF50" // Change to your desired color
+          onPress={() => {}}
+          style={styles.readyButton}
+        />
+      </Link>
       </View>
     </View>
   );
@@ -34,5 +35,5 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '90%',
     position: 'absolute'
-  }
+  },
 });
