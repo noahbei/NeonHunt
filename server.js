@@ -1,17 +1,36 @@
+// Add your mongodb cloud username and password and
+// run the app using npm start you will see logs saying
+// database connected.
+
 require('dotenv').config()
 
-const express = require('express')
-const app = express()
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
+const express = require("express");
+const Item = require("./models/item");
 
-mongoose.connect(process.env.DATABASE_URL, {})
-const db = mongoose.connection
-db.on('error', (error) => console.error(error))
-db.once('open', () => console.log("Connected to database"))
-
+const app = express();
 app.use(express.json())
 
-const itemsRouter = require('./routes/items')
-app.use('/items', itemsRouter)
+const dbURI = process.env.DATABASE_URL
 
-app.listen(3000, () => console.log('Server started'))
+mongoose
+  .connect(dbURI)
+  .then((result) =>
+    app.listen(3000, (req, res) => {
+      console.log("Connected to DB listening on port 3000");
+    })
+  )
+  .catch((error) => console.log(error));
+
+app.get('/items', async (req, res)=>{
+    try{
+        const items = await Item.find({})
+        res.status(200).send(items)
+    }catch(error){
+        res.status(500).send(error)
+    }
+})
+
+
+
+

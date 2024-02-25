@@ -1,14 +1,10 @@
 const mongoose = require('mongoose')
 
 const itemSchema = new mongoose.Schema({
-    name: {
-       type: String,
-       required: true 
-    },
-    type: {
-        type: String,
-        required: true
-    }
+    Item: String,
+    Type: String
 })
 
-module.exports = mongoose.model('Item', itemSchema)
+const Item = mongoose.model('Item', itemSchema)
+
+module.exports = Item
