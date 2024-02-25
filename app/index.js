@@ -7,7 +7,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <NeonButton onPressFunction={() => {console.log("hello")}} text={'Hello'}></NeonButton>
+      <NeonButton onPressFunction={() => {console.log("button test")}} text={'Hello'}></NeonButton>
       <Link href="/readyScreen" asChild>
         <Button
             title="Start Game!"
