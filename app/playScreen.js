@@ -1,9 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Pressable} from 'react-native';
+import { StyleSheet, Text, View, Button, Pressable, Image} from 'react-native';
 import { Link } from 'expo-router';
 import Item from './components/Item'
+import * as ImagePicker from 'expo-image-picker';
+import { useState } from 'react';
 
 export default function App() {
+  
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -13,13 +17,12 @@ export default function App() {
       <Button
           title="take picture"
           color="#f194ff"
-          onPress={() => {}}
+          
       />
       <Link href="/finishScreen" asChild>
         <Button
             title="done -- go to end page"
             color="#f194ff"
-            onPress={() => {}}
         />
       </Link>
     </View>
