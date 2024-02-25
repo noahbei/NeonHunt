@@ -7,7 +7,7 @@ import { ButtonGroup } from '@rneui/themed';
 import Title from './components/Title';
 
 export default function App() {
-    const [selectedIndex, setSelectedIndex] = useState([0, 1]);
+    const [selectedIndex, setSelectedIndex] = useState(0);
     const [text, setText] = useState('');
 
     const handleInputChange = (input) => {
@@ -30,7 +30,9 @@ export default function App() {
           style={styles.input}
           onChangeText={handleInputChange}
           value={text}
-          placeholder="###"
+          placeholder="######"
+          inputMode='numeric'
+          maxLength={6}
         />
 
         <ButtonGroup
